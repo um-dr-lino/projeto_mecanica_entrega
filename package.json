@@ -1,0 +1,19 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "boa tarde, segue o domínio de problema: Desenvolver uma aplicação servidora em que o proprietário (cpf, nome e fone) possa ter um ou mais veículo (placa_veiculo, modelo_veiculo e preco_veiculo). Se o preço do veículo for maior ou igual a R$ 45.000,00 e menor R$ 90.000,00 associar à tabela tipo_veículo (id_tipo, tipo), o tipo luxo. Se for menor que R$ 45.000,00 associar popular. Do contrário associar super luxo. Para a implementação da persistência de dados, utilize a técnica de ORM - Object Relational Mapping. Essa aplicação tem que atender as requisições CRUD oriundas de qualquer cliente-server por meio de API Rest. Como também, permitir consultas de veículos por proprietário e tipo. Além disso, inserir a utilização de token (JWT) em um dos end-points da API ou se preferir adicione uma funcionalidade de login (usuário e senha) com token.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "dotenv-safe": "^9.1.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
