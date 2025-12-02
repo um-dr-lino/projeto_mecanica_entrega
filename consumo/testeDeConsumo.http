@@ -1,4 +1,5 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc2NDI4MjIzOSwiZXhwIjoxNzY0MjgyNTM5fQ.JZRFeNlJHDpog8tE7-xbd65zMJEvhdNtMzYr-Lw540Q
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc2NDY4OTY5MCwiZXhwIjoxNzY0Njg5OTkwfQ.Is9ai1uy43U5KRy2xp8n8FX0nk58-wkZDD426sTCFSg
+
 ### Gerar Token
 POST http://localhost:3000/auth/login HTTP/1.1
 content-type: application/json
@@ -9,7 +10,7 @@ content-type: application/json
 }
 
 ### Criar usuario
-POST http://localhost:3000/auth/criarUsuario HTTP/1.1
+POST http://localhost:3000/auth/usuarios HTTP/1.1
 content-type: application/json
 x-access-token: {{token}}
 
@@ -20,7 +21,7 @@ x-access-token: {{token}}
 }
 
 ### Criar proprietario
-POST http://localhost:3000/auth/criaProprietario HTTP/1.1
+POST http://localhost:3000/auth/proprietarios HTTP/1.1
 content-type: application/json
 x-access-token: {{token}}
 
@@ -30,136 +31,54 @@ x-access-token: {{token}}
     "fone": "55555"
 }
 
-### Criar manutencao
-POST http://localhost:3000/auth/criaManutencao HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "id_veiculo": 3,
-    "id_servico": 2,
-    "data_servico": "2024-06-20",
-    "km": 15000,
-    "custo": 500.75,
-    "observacoes": "Troca de óleo e filtro"
-}
-
 ### Criar veiculo
-POST http://localhost:3000/auth/criarVeiculo HTTP/1.1
+POST http://localhost:3000/auth/veiculos HTTP/1.1
 content-type: application/json
 x-access-token: {{token}}
 
 {
-    "plca_veiculo": "XYZ-9876",
+    "placa_veiculo": "XYZ-9876",
     "id_modelo": 3,
     "id_proprietario": 3,
     "preco_veiculo": 85000.00,
     "ano": 2022
 }
 
-### Criar marca
-POST http://localhost:3000/auth/criarMarca HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "nome_marca": "Fiat"
-}
-
-### Criar modelo
-POST http://localhost:3000/auth/criarModelo HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "nome_modelo": "Toro",
-    "id_marca": 5
-}
-
-### Criar servico
-POST http://localhost:3000/auth/criarServico HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "nome_servico": "Cambagem",
-    "descricao_servico": "Rodizio de pneu"
-}
-
 ### Listar proprietarios
-GET http://localhost:3000/auth/listarProprietarios HTTP/1.1
+GET http://localhost:3000/auth/proprietarios HTTP/1.1
 x-access-token: {{token}}
 
 ### Listar veiculos
-GET http://localhost:3000/auth/listarVeiculos HTTP/1.1
-x-access-token: {{token}}
-
-### Listar marcas
-GET http://localhost:3000/auth/listarMarcas HTTP/1.1
-x-access-token: {{token}}
-
-### Listar modelos
-GET http://localhost:3000/auth/listarModelos HTTP/1.1
-x-access-token: {{token}}
-
-### Listar servicos
-GET http://localhost:3000/auth/listarServicos HTTP/1.1
-x-access-token: {{token}}
-
-### Listar manutencoes
-GET http://localhost:3000/auth/listarManutencoes HTTP/1.1
+GET http://localhost:3000/auth/veiculos HTTP/1.1
 x-access-token: {{token}}
 
 ### Listar usuarios
-GET http://localhost:3000/auth/listarUsuarios HTTP/1.1
+GET http://localhost:3000/auth/usuarios HTTP/1.1
 x-access-token: {{token}}
 
 ### Deletar usuario
-DELETE http://localhost:3000/auth/deletarUsuario/2 HTTP/1.1
+DELETE http://localhost:3000/auth/usuarios/2 HTTP/1.1
 x-access-token: {{token}}
 
 {
     "id": 5
 }
 ### Deletar proprietario
-DELETE http://localhost:3000/auth/deletarProprietario/2 HTTP/1.1
+DELETE http://localhost:3000/auth/proprietarios/2 HTTP/1.1
 x-access-token: {{token}}
 
 {
     "id": 2
 }
 ### Deletar veiculo
-DELETE http://localhost:3000/auth/deletarVeiculo/2 HTTP/1.1
+DELETE http://localhost:3000/auth/veiculos/2 HTTP/1.1
 x-access-token: {{token}}
-{
-    "id": 2
-}
-### Deletar marca
-DELETE http://localhost:3000/auth/deletarMarca/2 HTTP/1.1
-x-access-token: {{token}}
-{
-    "id": 2
-}
-### Deletar modelo
-DELETE http://localhost:3000/auth/deletarModelo/2 HTTP/1.1
-x-access-token: {{token}}
-{
-    "id": 2
-}
-### Deletar servico
-DELETE http://localhost:3000/auth/deletarServico/2 HTTP/1.1
-x-access-token: {{token}}
-{
-    "id": 2
-}
-### Deletar manutencao
-DELETE http://localhost:3000/auth/deletarManutencao/2 HTTP/1.1
-x-access-token: {{token}}
+
 {
     "id": 2
 }
 ### Atualizar usuario
-PUT http://localhost:3000/auth/atualizarUsuario/3 HTTP/1.1
+PUT http://localhost:3000/auth/usuarios/3 HTTP/1.1
 content-type: application/json  
 x-access-token: {{token}}
 
@@ -169,7 +88,7 @@ x-access-token: {{token}}
     "nome_completo": "Alysson Lino"
 }
 ### Atualizar proprietario
-PUT http://localhost:3000/auth/atualizarProprietario/3 HTTP/1.1
+PUT http://localhost:3000/auth/proprietarios/3 HTTP/1.1
 content-type: application/json
 x-access-token: {{token}}
 
@@ -179,55 +98,13 @@ x-access-token: {{token}}
     "fone": "66666"
 }
 ### Atualizar veiculo
-PUT http://localhost:3000/auth/atualizarVeiculo/3 HTTP/1.1
+PUT http://localhost:3000/auth/veiculos/3 HTTP/1.1
 content-type: application/json
 x-access-token: {{token}}
 
 {
-    "plca_veiculo": "ABC-1234",
-    "id_modelo": 2,
-    "id_proprietario": 2,
+    "placa_veiculo": "ABC-1234",
+    "id_proprietario": 1,
     "preco_veiculo": 90000.00,
-    "id_tipo": 1,
     "ano": 2023
 }   
-### Atualizar marca
-PUT http://localhost:3000/auth/atualizarMarca/3 HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "nome_marca": "Honda"
-}
-### Atualizar modelo
-PUT http://localhost:3000/auth/atualizarModelo/3 HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "nome_modelo": "Civic",
-    "id_marca": 2
-}
-### Atualizar servico
-PUT http://localhost:3000/auth/atualizarServico/3 HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "descricao": "Troca de pneus",
-    "preco": 300.00
-}
-### Atualizar manutencao
-PUT http://localhost:3000/auth/atualizarManutencao/3 HTTP/1.1
-content-type: application/json
-x-access-token: {{token}}
-
-{
-    "id_veiculo": 22,
-    "id_servico": 3,
-    "data_servico": "2024-07-15",
-    "km": 20000,
-    "custo": 750.00,
-    "observacoes": "Troca de pneus e alinhamento"
-}
-

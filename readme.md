@@ -10,7 +10,7 @@ Valor da Atividade: Esta atividade valerá 70% da nota final da disciplina de Ba
 
 O que deve ser feito?
 
-Aproveitando o banco de dados do projeto desenvolvido em Server-side, vocês deverão criar os seguintes componentes:
+x'Aproveitando o banco de dados do projeto desenvolvido em Server-side, vocês deverão criar os seguintes componentes:
 
 1. Três Consultas Complexas:
 

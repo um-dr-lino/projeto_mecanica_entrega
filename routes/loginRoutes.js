@@ -1,44 +1,27 @@
-import express from 'express';
-import {loginController} from '../controllers/loginController.js';
-import { verificaJWT } from '../middleware/authMiddleware.js';
+import express from "express";
+import { verificaJWT } from "../middleware/authMiddleware.js";
+import { loginController } from "../controllers/loginController.js";
+import { userController } from "../controllers/userController.js";
+import { proprietarioController } from "../controllers/proprietarioController.js";
+import { veiculoController } from "../controllers/veiculoController.js";
 
 const router = express.Router();
-// só os posts
-router.post('/login', loginController.login)
-router.post('/criarUsuario', verificaJWT, loginController.criarUsuario)
-router.post('/criaProprietario', verificaJWT, loginController.criaProprietario)
-router.post('/criaManutencao', verificaJWT, loginController.criaManutencao)
-router.post('/criarVeiculo', verificaJWT, loginController.criarVeiculo)
-router.post('/criarMarca', verificaJWT, loginController.criarMarca)
-router.post('/criarModelo', verificaJWT, loginController.criarModelo)
-router.post('/criarServico', verificaJWT, loginController.criarServico)
 
+router.post("/login", loginController.login);
 
-// só os gets
-router.get('/listarUsuarios', verificaJWT, loginController.listar_usuarios)
-router.get('/listarProprietarios', verificaJWT, loginController.listar_proprietarios)
-router.get('/listarVeiculos', verificaJWT, loginController.listar_veiculos)
-router.get('/listarMarcas', verificaJWT, loginController.listar_marcas)
-router.get('/listarModelos', verificaJWT, loginController.listar_modelos)
-router.get('/listarServicos', verificaJWT, loginController.listar_servicos)
-router.get('/listarManutencoes', verificaJWT, loginController.listar_manutencoes)
+router.post("/usuarios", verificaJWT, userController.create);
+router.get("/usuarios", verificaJWT, userController.getAll);
+router.put("/usuarios/:id", verificaJWT, userController.update);
+router.delete("/usuarios/:id", verificaJWT, userController.delete);
 
-// só os puts
-router.put('/atualizarUsuario/:id', verificaJWT, loginController.atualizarUsuario)
-router.put('/atualizarProprietario/:id', verificaJWT, loginController.atualizarProprietario)
-router.put('/atualizarVeiculo/:id', verificaJWT, loginController.atualizarVeiculo)
-router.put('/atualizarMarca/:id', verificaJWT, loginController.atualizarMarca)
-router.put('/atualizarModelo/:id', verificaJWT, loginController.atualizarModelo)
-router.put('/atualizarServico/:id', verificaJWT, loginController.atualizarServico)
-router.put('/atualizarManutencao/:id', verificaJWT, loginController.atualizarManutencao)
- 
-// so os deletes
-router.delete('/deletarUsuario/:id', verificaJWT, loginController.deletarUsuario)
-router.delete('/deletarProprietario/:id', verificaJWT, loginController.deletarProprietario)
-router.delete('/deletarVeiculo/:id', verificaJWT, loginController.deletarVeiculo)
-router.delete('/deletarMarca/:id', verificaJWT, loginController.deletarMarca)
-router.delete('/deletarModelo/:id', verificaJWT, loginController.deletarModelo)
-router.delete('/deletarServico/:id', verificaJWT, loginController.deletarServico)
-router.delete('/deletarManutencao/:id', verificaJWT, loginController.deletarManutencao)
+router.post("/proprietarios", verificaJWT, proprietarioController.create);
+router.get("/proprietarios", verificaJWT, proprietarioController.getAll);
+router.put("/proprietarios/:id", verificaJWT, proprietarioController.update);
+router.delete("/proprietarios/:id", verificaJWT, proprietarioController.delete);
+
+router.post("/veiculos", verificaJWT, veiculoController.create);
+router.get("/veiculos", verificaJWT, veiculoController.getAll);
+router.put("/veiculos/:id", verificaJWT, veiculoController.update);
+router.delete("/veiculos/:id", verificaJWT, veiculoController.delete);
 
 export default router;

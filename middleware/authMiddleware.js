@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import jwt from 'jsonwebtoken';
-const SECRET = process.env.JWT_SECRET; 
+const SECRET = process.env.JWT_SECRET || 'sua-chave-secreta-aqui';
 
 export const verificaJWT = (req, res, next) => {
-
     const token = req.headers['x-access-token'];
     if (!token) {
         return res.status(401).json({ auth: false, message: "Acesso negado: Nenhum token fornecido." });
@@ -10,9 +12,9 @@ export const verificaJWT = (req, res, next) => {
 
     jwt.verify(token, SECRET, (err, decoded) =>{
         if(err){
-            return res.status(401).json({auth: false, message: "Token inválido ou expirado"})
+            return res.status(401).json({auth: false, message: "Token inválido ou expirado"});
         }
-        req.userId = decoded.id
+        req.userId = decoded.id;
         next();
-    })   
+    });
 };
