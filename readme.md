@@ -50,4 +50,4 @@ Vocês deverão entregar um documento PDF no dia 05/12/2025, contendo:
 
 4. Código Fonte: código fonte da rota e da função de consulta ao banco de dados onde cada comando é executado.
 
-5. Prints de tela: print da tela do sistema que mostra o resultado de cada comando executado.
+5. Prints de tela: print da tela do sistema que mostra o resultado de cada comando executado.# projeto_mecanica_entrega

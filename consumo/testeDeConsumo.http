@@ -1,12 +1,11 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc2NDg5NDMxNiwiZXhwIjoxNzY0ODk0NjE2fQ.n7pcVg8xmjtVeVrdUV1tlsNoMN0HYCbw0f7Uhx2SHw8
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc2NDk3MjA1MiwiZXhwIjoxNzY0OTcyMzUyfQ.pVWs_Qci49Oc3DenddtYZUZY3vtlFXDSGxAlh0klPOQ
 ### Gerar Token
 POST http://localhost:3000/auth/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "admin",
-    "senha": "admin"
+    "username": "Lino",
+    "senha": "admin111111"
 }
 
 ### Criar usuario

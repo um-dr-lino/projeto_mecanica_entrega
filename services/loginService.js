@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 import { loginModel } from '../models/loginModel.js';
 import dotenv from "dotenv";
 
-
 dotenv.config();
 const SECRET = process.env.JWT_SECRET;
 
