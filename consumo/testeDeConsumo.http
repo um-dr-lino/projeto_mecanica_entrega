@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc2NDY4OTY5MCwiZXhwIjoxNzY0Njg5OTkwfQ.Is9ai1uy43U5KRy2xp8n8FX0nk58-wkZDD426sTCFSg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTc2NDg5NDMxNiwiZXhwIjoxNzY0ODk0NjE2fQ.n7pcVg8xmjtVeVrdUV1tlsNoMN0HYCbw0f7Uhx2SHw8
 
 ### Gerar Token
 POST http://localhost:3000/auth/login HTTP/1.1

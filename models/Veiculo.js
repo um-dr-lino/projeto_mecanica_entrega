@@ -19,4 +19,5 @@ export const Veiculo = sequelize.define("veiculo", {
 Veiculo.belongsTo(Proprietario, { foreignKey: "id_proprietario" });
 Veiculo.belongsTo(TipoVeiculo, { foreignKey: "id_tipo" });
 
+
 export default Veiculo;

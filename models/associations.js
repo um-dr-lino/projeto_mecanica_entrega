@@ -8,3 +8,6 @@ Veiculo.belongsTo(Proprietario, { foreignKey: "id_proprietario" });
 
 TipoVeiculo.hasMany(Veiculo, { foreignKey: "id_tipo" });
 Veiculo.belongsTo(TipoVeiculo, { foreignKey: "id_tipo" });
+
+Veiculo.belongsTo(Proprietario, { foreignKey: "id_proprietario" });
+Veiculo.belongsTo(TipoVeiculo, { foreignKey: "id_tipo" });

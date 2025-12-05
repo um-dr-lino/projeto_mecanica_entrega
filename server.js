@@ -13,7 +13,7 @@ app.use('/auth', loginRoutes);
 
 async function seedDatabase() {
   try {
-    console.log('\n📝 Inserindo dados iniciais...\n');
+    console.log('\nInserindo dados iniciais...\n');
 
     const userCount = await User.count();
     if (userCount === 0) {
@@ -33,7 +33,7 @@ async function seedDatabase() {
         { id_tipo: 3, tipo: 'Super Luxo' }
       ];
       await TipoVeiculo.bulkCreate(tipos);
-      console.log('✅ Tipos de veículo inseridos: 3 tipos');
+      console.log('Tipos de veículo inseridos: 3 tipos');
     }
     const proprietarioCount = await Proprietario.count();
     if (proprietarioCount === 0) {
@@ -43,7 +43,7 @@ async function seedDatabase() {
         { cpf: 55555555555, nome: 'Pedro Oliveira', fone: '11977777777' }
       ];
       await Proprietario.bulkCreate(proprietarios);
-      console.log('✅ Proprietários inseridos: 3 proprietários');
+      console.log('Proprietários inseridos: 3 proprietários');
     }
     const veiculoCount = await Veiculo.count();
     if (veiculoCount === 0) {

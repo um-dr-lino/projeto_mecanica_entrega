@@ -6,7 +6,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node scripts/deletarBanco.js && node server.js",
     "delete_banco": "node scripts/deletarBanco.js"
   },
   "keywords": [],
